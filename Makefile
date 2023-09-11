@@ -8,7 +8,7 @@ lib.name = usrcfilter
 
 class.sources = src/slewfilter~.c
 
-datafile = doc/slewfilter-help.pd
+datafile = ./slewfilter-help.pd
 
 # include Makefile.pdlibbuilder from directory 'pd-lib-builder' in Pd local install
 include $(local-pdlibbuilder-path)
