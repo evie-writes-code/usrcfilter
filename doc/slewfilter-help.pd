@@ -1,7 +1,7 @@
-#N canvas 528 29 661 476 10;
-#X obj 109 237 usrcfilter/slewfilter~;
-#X floatatom 238 218 5 0 0 0 - - -, f 5;
-#X obj 99 217 phasor~ 200;
+#N canvas 73 89 661 476 10;
+#X obj 86 257 usrcfilter/slewfilter~;
+#X floatatom 215 238 5 0 0 0 - - -, f 5;
+#X obj 76 237 phasor~ 200;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-postfilter 441 float 3;
 #A 0 -0.732458 -0.739219 -0.745416 -0.751076 -0.756227 -0.760893 -0.7651
@@ -128,23 +128,25 @@
 ;
 #X coords 0 1 441 -1 200 140 1 0 0;
 #X restore 419 49 graph;
-#X obj 53 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 30 193 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 109 278 tabwrite~ \$0-postfilter;
-#X obj 53 233 t b b;
-#X obj 99 298 tabwrite~ \$0-prefilter;
-#X obj 109 258 -~ 1;
-#X msg 258 177 0.5;
-#X msg 268 197 0;
-#X obj 289 141 loadbang;
-#X msg 248 157 0.95;
-#X msg 238 137 0.99;
-#X text 8 28 Generates a constant moving average with a window of one
-sample. Right inlet sets the weight of the current average against
+#X obj 86 298 tabwrite~ \$0-postfilter;
+#X obj 30 253 t b b;
+#X obj 76 318 tabwrite~ \$0-prefilter;
+#X obj 86 278 -~ 1;
+#X msg 235 197 0.5;
+#X msg 245 217 0;
+#X obj 266 161 loadbang;
+#X msg 225 177 0.95;
+#X msg 215 157 0.99;
+#X text 18 48 Generates a constant moving average with a window of
+one sample. Right inlet sets the weight of the current average against
 the incoming sample: 0 is a clean unaltered signal and 1 is fully suppressed.
 ;
-#X text 41 150 bang to see effect on phasor;
-#X text 299 167 set ratio;
+#X text 18 170 bang to see effect on phasor;
+#X text 276 238 set ratio;
+#X obj 21 18 usrcfilter/slewfilter~;
+#X text 164 18 LOW-PASS 'SLEW' FILTER;
 #X connect 0 0 8 0;
 #X connect 1 0 0 1;
 #X connect 2 0 0 0;
