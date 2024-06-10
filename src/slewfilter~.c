@@ -103,6 +103,7 @@ void slewfilter_tilde_setup(void) {
 		(t_method)slewfilter_tilde_dsp,
 		gensym("dsp"),
 		A_CANT, 0);
+	//do class stuff so we can have a signal inlet, I think
 	CLASS_MAINSIGNALIN(slewfilter_tilde_class,
 		t_slewfilter_tilde, f);
 	//binding symbol 'mixratio' to its handler function, expecting float input
