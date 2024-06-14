@@ -6,9 +6,9 @@ local-pdlibbuilder-path = /Applications/Pd-0.48-1.app/Contents/Resources/pd-lib-
 
 lib.name = usrcfilter
 
-class.sources = src/slewfilter~.c
+class.sources = src/slewfilter~.c src/softlimtan~.c
 
-datafile = ./slewfilter-help.pd
+datafile = ./slewfilter~-help.pd ./softlimtan~-help.pd
 
 # include Makefile.pdlibbuilder from directory 'pd-lib-builder' in Pd local install
 include $(local-pdlibbuilder-path)
